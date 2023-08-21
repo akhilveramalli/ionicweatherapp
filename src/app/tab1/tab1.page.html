@@ -1,0 +1,76 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Weather App
+    </ion-title>
+    <ion-buttons slot='end'>
+    <ion-button color='primary' >
+      <ion-icon  name="swap-horizontal-outline"></ion-icon> &nbsp; Chnage Location
+    </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!--
+<ion-content [fullscreen]="true">
+
+  <ion-button (click)='weather()' >get</ion-button>
+<ion-header>Weather APP</ion-header>
+</ion-content> -->
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ weatherData.location.name }}</ion-card-title>
+      <ion-card-subtitle>{{ weatherData.location.region }}, {{ weatherData.location.country }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div class="weather-condition">
+        <img [src]="weatherData.current.condition.icon" alt="{{ weatherData.current.condition.text }}">
+        <p class="condition-text">{{ weatherData.current.condition.text }}</p>
+      </div>
+
+      <div class="parameter-group">
+        <h3>Weather Details</h3>
+        <div class="parameter-columns">
+          <div class="parameter-column">
+            <p><span class="parameter-heading">Temperature:</span><br> {{ weatherData.current.temp_c }}°C / {{ weatherData.current.temp_f }}°F</p>
+            <p><span class="parameter-heading">Wind:</span><br> {{ weatherData.current.wind_mph }} mph / {{ weatherData.current.wind_kph }} kph</p>
+            <p><span class="parameter-heading">Pressure:</span><br> {{ weatherData.current.pressure_mb }} mb / {{ weatherData.current.pressure_in }} in</p>
+            <p><span class="parameter-heading">Precipitation:</span><br> {{ weatherData.current.precip_mm }} mm / {{ weatherData.current.precip_in }} in</p>
+            <p><span class="parameter-heading">Humidity:</span><br> {{ weatherData.current.humidity }}%</p>
+          </div>
+          <div class="parameter-column">
+            <p><span class="parameter-heading">Cloud Cover:</span><br> {{ weatherData.current.cloud }}%</p>
+            <p><span class="parameter-heading">Feels Like:</span><br> {{ weatherData.current.feelslike_c }}°C / {{ weatherData.current.feelslike_f }}°F</p>
+            <p><span class="parameter-heading">Visibility:</span><br> {{ weatherData.current.vis_km }} km / {{ weatherData.current.vis_miles }} miles</p>
+            <p><span class="parameter-heading">UV Index:</span> {{ weatherData.current.uv }}</p>
+            <p><span class="parameter-heading">Gust:</span><br> {{ weatherData.current.gust_mph }} mph / {{ weatherData.current.gust_kph }} kph</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="parameter-group">
+        <h3>Air Quality</h3>
+        <div class="parameter-columns">
+          <div class="parameter-column">
+            <p><span class="parameter-heading">CO:</span><br> {{ weatherData.current.air_quality.co }}</p>
+            <p><span class="parameter-heading">NO2:</span><br> {{ weatherData.current.air_quality.no2 }}</p>
+            <p><span class="parameter-heading">O3:</span><br> {{ weatherData.current.air_quality.o3 }}</p>
+            <p><span class="parameter-heading">SO2:</span><br> {{ weatherData.current.air_quality.so2 }}</p>
+          </div>
+          <div class="parameter-column">
+            <p><span class="parameter-heading">PM2.5:</span><br> {{ weatherData.current.air_quality.pm2_5 }}</p>
+            <p><span class="parameter-heading">PM10:</span><br> {{ weatherData.current.air_quality.pm10 }}</p>
+            <p><span class="parameter-heading">US EPA Index:</span><br> {{ weatherData.current.air_quality['us-epa-index'] }}</p>
+            <p><span class="parameter-heading">GB DEFRA Index:</span><br> {{ weatherData.current.air_quality['gb-defra-index'] }}</p>
+          </div>
+        </div>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+  <br>
+  <br>
+  <br>
+</ion-content>

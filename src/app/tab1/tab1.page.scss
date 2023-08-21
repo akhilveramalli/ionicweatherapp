@@ -1,0 +1,58 @@
+.weather-condition {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  img {
+    width: 64px;
+    height: 64px;
+    margin-right: 10px;
+  }
+
+  .condition-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+}
+
+.parameter-group {
+  margin-top: 20px;
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  p {
+    margin: 5px 0;
+  }
+}
+
+.parameter-group {
+  margin-top: 20px;
+
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  .parameter-columns {
+    display: flex;
+  }
+
+  .parameter-column {
+    flex: 1;
+  }
+
+  .parameter-heading {
+    font-weight: bold;
+  }
+
+  p {
+    margin: 5px 0;
+  }
+}

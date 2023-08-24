@@ -1,0 +1,17 @@
+.weather-condition {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  
+    img {
+      width: 64px;
+      height: 64px;
+      margin-right: 10px;
+    }
+  
+    .condition-text {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  }

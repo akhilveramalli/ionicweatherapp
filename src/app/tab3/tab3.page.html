@@ -1,17 +1,53 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card>
+    <!-- <ion-img src="assets/barcode.jpeg"></ion-img> -->
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+    <ion-card-header>
+      <ion-card-title>Barcode/QR Scanning</ion-card-title>
+      
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button expand="full" color="success" (click)="scanBarcode()">Scan a Code</ion-button>
+      <div *ngIf="scannedData">
+        <p>
+          Scanned Code Text : <b>{{ scannedData["text"] }}</b>
+        </p>
+        <p>
+          Scanned Code Format : <b>{{ scannedData["format"] }}</b>
+        </p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>QR Code Creation</ion-card-title>
+      
+    </ion-card-header>
+    <ion-card-content>
+      <!-- <ion-item>
+        <ion-label position="floating">Enter UPI ID</ion-label>
+        <ion-input type="text" [(ngModel)]="number"></ion-input>
+      </ion-item> -->
+      <ion-item>
+        <ion-label position="floating">Enter Amount</ion-label>
+        <ion-input type="number" [(ngModel)]="inputData"></ion-input>
+      </ion-item>
+
+
+      <!-- <ion-input aria-placeholder="Enter UPI ID" type="number" [(ngModel)]="number"></ion-input>
+      <ion-input aria-placeholder="Enter Amount" type="number" [(ngModel)]="inputData"></ion-input> -->
+      <ion-button expand="full" color="success" (click)="createBarcode()">Create a QR code</ion-button>
+      <ion-button expand="full" color="success" (click)="showEnterNameAlert()">Change UPI ID</ion-button>
+
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
